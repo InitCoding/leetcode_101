@@ -25,7 +25,7 @@
 
 int mySqrt(int x) 
 {
-	if (x == 0)
+	if (x == 0 || x==1)
 		return x;
 
 	int left = 0;
@@ -34,7 +34,7 @@ int mySqrt(int x)
 	int sqrt = 0;
 	while (right >= left)
 	{
-		mid = (left + right) >> 1;
+		mid = left + (right - left) / 2;
 		sqrt = x / mid;  // sqrt所在范围内查找
 		if (mid == sqrt)
 			return mid;
