@@ -23,7 +23,7 @@
 	由于返回类型是整数，小数部分将被舍去。
 */
 
-int mySqrt(int x) 
+int mySqrt_1(int x) 
 {
 	if (x == 0 || x==1)
 		return x;
@@ -47,10 +47,26 @@ int mySqrt(int x)
 	return right;
 }
 
-int main()
+
+//此方法更容易理解
+int mySqrt_2(int x) 
 {
-	//int a = mySqrt(8);
-	//int a = mySqrt(2);
-	int a = mySqrt(6);
-	return 0;
+	if (x == 0 || x == 1)
+		return x;
+
+	int left = 0, right = x;
+	int mid = 0;
+	int ret = 0;
+	while (left <= right)
+	{
+		mid = left + (right - left) / 2;
+		if ((long)mid * mid <= x)  //此处注意int的范围
+		{
+			ret = mid;		//每次记录区间中间值
+			left = mid + 1;
+		}
+		else
+			right = mid - 1;
+	}
+	return ret;
 }
