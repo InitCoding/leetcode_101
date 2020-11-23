@@ -16,7 +16,7 @@ using namespace std;
 */
 
 
-//¿ìËÙÅÅĞò
+//µİ¹é
 //[,) ×ó±ÕÓÒ¿ª
 void MergeSort(vector<int>& nums, int left, int right,int* tmp)
 {
@@ -54,6 +54,7 @@ void MergeSort(vector<int>& nums, int left, int right,int* tmp)
 		nums[i + left] = tmp[i];
 	}
 }
+
 
 int main()
 {
